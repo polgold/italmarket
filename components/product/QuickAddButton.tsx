@@ -34,7 +34,7 @@ export function QuickAddButton({ productId, productName }: QuickAddButtonProps) 
   };
 
   const label = {
-    idle: "Aggiungi",
+    idle: "Agregar",
     loading: "…",
     done: "✓ Agregado",
     error: "Error",

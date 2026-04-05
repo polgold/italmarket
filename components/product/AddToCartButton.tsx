@@ -50,7 +50,7 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
         }}
         className="btn-primary flex-1 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {busy ? "Agregando…" : "Aggiungi al carrello"}
+        {busy ? "Agregando…" : "Agregar al carrito"}
       </button>
     </div>
   );
