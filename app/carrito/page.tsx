@@ -67,7 +67,7 @@ export default function CarritoPage() {
               <span className="eyebrow">Total</span>
               <span className="font-serif text-3xl text-ink">{formatPrice(subtotal)}</span>
             </div>
-            <button className="btn-primary mt-8 w-full">Ir al checkout</button>
+            <Link href="/checkout" className="btn-primary mt-8 w-full">Ir al checkout</Link>
             <Link href="/productos" className="mt-4 block text-center text-[11px] uppercase tracking-extra-wide text-ink/60 hover:text-ink">
               Seguir comprando
             </Link>

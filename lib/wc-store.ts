@@ -55,7 +55,25 @@ interface WcCall {
   query?: Record<string, string | number | undefined>;
 }
 
-async function call<T>({ method, path, body, query }: WcCall): Promise<T> {
+async function call<T>(opts: WcCall): Promise<T> {
+  try {
+    return await rawCall<T>(opts);
+  } catch (e) {
+    // Self-heal on missing/invalid Nonce: GET /cart once so Woo reissues a
+    // fresh Nonce (captured by our cookie writer), then retry the original
+    // request. Guard against infinite recursion by not retrying /cart.
+    const err = e as { status?: number; data?: { code?: string } };
+    const isNonceError =
+      err.status === 401 &&
+      (err.data?.code === "woocommerce_rest_missing_nonce" ||
+        err.data?.code === "woocommerce_rest_invalid_nonce");
+    if (!isNonceError || opts.path === "/cart") throw e;
+    await rawCall({ method: "GET", path: "/cart" });
+    return rawCall<T>(opts);
+  }
+}
+
+async function rawCall<T>({ method, path, body, query }: WcCall): Promise<T> {
   const jar = await cookies();
   const token = jar.get(COOKIE_TOKEN)?.value;
   const nonce = jar.get(COOKIE_NONCE)?.value;
@@ -129,6 +147,40 @@ function rewriteCartImages(payload: unknown): unknown {
   return payload;
 }
 
+// ---------- Checkout-related payloads ----------
+
+export interface StoreAddress {
+  first_name: string;
+  last_name: string;
+  company?: string;
+  address_1: string;
+  address_2?: string;
+  city: string;
+  state: string;
+  postcode: string;
+  country: string;
+  phone?: string;
+}
+
+export interface StoreBillingAddress extends StoreAddress {
+  email: string;
+}
+
+export interface StoreOrder {
+  order_id: number;
+  order_number: string;
+  order_key: string;
+  status: string;
+  customer_note: string;
+  billing_address: StoreBillingAddress;
+  shipping_address: StoreAddress;
+  payment_method: string;
+  payment_result: {
+    payment_status: string;
+    redirect_url: string;
+  };
+}
+
 export const wcStore = {
   getCart: () => call<StoreCart>({ method: "GET", path: "/cart" }),
   addItem: (id: number, quantity: number) =>
@@ -145,6 +197,39 @@ export const wcStore = {
     call<StoreCart>({ method: "POST", path: "/cart/apply-coupon", body: { code } }),
   removeCoupon: (code: string) =>
     call<StoreCart>({ method: "POST", path: "/cart/remove-coupon", body: { code } }),
+
+  /**
+   * Sets the customer's billing/shipping address on the cart. Triggers Woo
+   * to recalculate shipping rates against the destination, which show up in
+   * the returned cart's `shipping_rates` field.
+   */
+  updateCustomer: (payload: {
+    billing_address: StoreBillingAddress;
+    shipping_address: StoreAddress;
+  }) =>
+    call<StoreCart>({ method: "POST", path: "/cart/update-customer", body: payload }),
+
+  /**
+   * Picks which of the quoted shipping rates the customer wants.
+   */
+  selectShippingRate: (package_id: number, rate_id: string) =>
+    call<StoreCart>({
+      method: "POST",
+      path: "/cart/select-shipping-rate",
+      body: { package_id, rate_id },
+    }),
+
+  /**
+   * Finalizes the order. Woo creates a real WooCommerce order in the
+   * status dictated by the selected payment method (bacs/transferencia
+   * lands in "on-hold" until the admin confirms the transfer).
+   */
+  placeOrder: (payload: {
+    billing_address: StoreBillingAddress;
+    shipping_address: StoreAddress;
+    payment_method: string;
+    customer_note?: string;
+  }) => call<StoreOrder>({ method: "POST", path: "/checkout", body: payload }),
 };
 
 // ---------- Cart token helpers (for the pairing flow) ----------

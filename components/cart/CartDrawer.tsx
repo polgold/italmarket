@@ -113,8 +113,15 @@ export function CartDrawer() {
               <p className="mt-1 text-[11px] uppercase tracking-extra-wide text-ink/50">
                 Envíos e impuestos calculados en el checkout
               </p>
-              <Link href="/carrito" onClick={closeCart} className="btn-primary mt-5 w-full">
+              <Link href="/checkout" onClick={closeCart} className="btn-primary mt-5 w-full">
                 Finalizar compra
+              </Link>
+              <Link
+                href="/carrito"
+                onClick={closeCart}
+                className="mt-2 block w-full text-center text-[11px] uppercase tracking-extra-wide text-ink/60 hover:text-ink"
+              >
+                Ver carrito completo
               </Link>
               <button
                 onClick={closeCart}
