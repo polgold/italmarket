@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.env
+.env.local
+.DS_Store
+*.log
+# Unresized originals downloaded by scripts/optimize-catalog-images.mjs — heavy,
+# regenerable from WooCommerce any time. Keep thumb/ + large/ + index.json.
+public/images/catalog/.originals/
