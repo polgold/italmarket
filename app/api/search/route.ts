@@ -4,7 +4,7 @@ import { decodeEntities } from "@/lib/utils";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SITE = process.env.WC_SITE_URL || "https://italmarket.com.ar";
+const SITE = process.env.WC_SITE_URL || "https://shop.italmarket.com.ar";
 
 interface StoreProduct {
   id: number;

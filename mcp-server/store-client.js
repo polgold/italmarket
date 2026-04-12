@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
 
-const BASE = process.env.ITALMARKET_WC_URL || "https://italmarket.com.ar";
+const BASE = process.env.ITALMARKET_WC_URL || "https://shop.italmarket.com.ar";
 const STATE_DIR = path.join(os.homedir(), ".italmarket-mcp");
 const STATE_FILE = path.join(STATE_DIR, "state.json");
 

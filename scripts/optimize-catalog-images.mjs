@@ -23,7 +23,7 @@ const LARGE_DIR = path.join(OUT_ROOT, "large");
 const ORIG_DIR = path.join(OUT_ROOT, ".originals");
 const INDEX_PATH = path.join(OUT_ROOT, "index.json");
 
-const SITE = process.env.WC_SITE_URL || "https://italmarket.com.ar";
+const SITE = process.env.WC_SITE_URL || "https://shop.italmarket.com.ar";
 const PER_PAGE = 100;
 const CONCURRENCY = 4;
 

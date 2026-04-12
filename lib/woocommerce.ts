@@ -34,7 +34,7 @@ export function rewriteImage(src: string): string {
  * still works offline.
  */
 
-const SITE_URL = process.env.WC_SITE_URL || "https://italmarket.com.ar";
+const SITE_URL = process.env.WC_SITE_URL || "https://shop.italmarket.com.ar";
 const BASE = `${SITE_URL}/wp-json/wc/store/v1`;
 
 // ---------- Store API shapes (only the fields we actually use) ----------

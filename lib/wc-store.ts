@@ -12,7 +12,7 @@
 import { cookies } from "next/headers";
 import { rewriteImage } from "./woocommerce";
 
-const BASE = process.env.WC_SITE_URL || "https://italmarket.com.ar";
+const BASE = process.env.WC_SITE_URL || "https://shop.italmarket.com.ar";
 const COOKIE_TOKEN = "italmarket_cart_token";
 const COOKIE_NONCE = "italmarket_cart_nonce";
 

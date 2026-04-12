@@ -10,7 +10,7 @@ Only one variable matters in production. See [.env.example](.env.example).
 
 | Var | Default | Where it's used |
 |---|---|---|
-| `WC_SITE_URL` | `https://italmarket.com.ar` | Base URL of the WooCommerce host. All Store API calls hit `${WC_SITE_URL}/wp-json/wc/store/v1`. |
+| `WC_SITE_URL` | `https://shop.italmarket.com.ar` | Base URL of the WooCommerce host (subdomain where WordPress lives). All Store API calls hit `${WC_SITE_URL}/wp-json/wc/store/v1`. The root domain `italmarket.com.ar` is served by this Next.js app. |
 | `PORT` | _set by host_ | Port Next.js listens on. |
 | `NODE_ENV` | `production` | Set by build pipeline. |
 

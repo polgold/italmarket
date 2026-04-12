@@ -153,7 +153,7 @@ export default function ConfirmacionPage() {
               rel="noopener noreferrer"
               className="text-[11px] uppercase tracking-extra-wide text-ink/60 underline-offset-4 hover:text-ink hover:underline"
             >
-              Ver pedido en italmarket.com.ar →
+              Ver pedido en shop.italmarket.com.ar →
             </a>
           </div>
         )}
