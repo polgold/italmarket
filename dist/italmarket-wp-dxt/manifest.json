@@ -1,5 +1,5 @@
 {
-  "dxt_version": "0.1",
+  "manifest_version": "0.1",
   "name": "italmarket-wp",
   "display_name": "Italmarket WP",
   "version": "1.0.0",
@@ -19,6 +19,7 @@
   ],
   "server": {
     "type": "node",
+    "entry_point": "wrapper.js",
     "mcp_config": {
       "command": "npx",
       "args": [
