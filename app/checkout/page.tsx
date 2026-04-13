@@ -86,6 +86,21 @@ const PAYMENT_METHOD_LABELS: Record<string, { name: string; description: string 
     name: "Cheque",
     description: "Entrega por cheque.",
   },
+  "woo-mercado-pago-basic": {
+    name: "Mercado Pago",
+    description:
+      "Pagá con tu cuenta de Mercado Pago, tarjeta de crédito o débito. Te redirigimos al checkout seguro de Mercado Pago para finalizar el pago.",
+  },
+  "woo-mercado-pago-custom": {
+    name: "Tarjeta de crédito o débito",
+    description:
+      "Pagá en hasta 12 cuotas con tarjeta de crédito o débito, procesado por Mercado Pago.",
+  },
+  "woo-mercado-pago-ticket": {
+    name: "Efectivo · Pago Fácil / Rapipago",
+    description:
+      "Generamos un cupón para que pagues en efectivo en cualquier sucursal de Pago Fácil o Rapipago.",
+  },
 };
 
 interface FormState {

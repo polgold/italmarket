@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const stores = [
   {
     name: "Italmarket Barrio Norte",
-    address: "Av. Santa Fe 2100, CABA",
+    address: "Av. Santa Fe 2727, CABA",
     hours: [
       { d: "Lunes a Viernes", h: "10:00 — 21:00" },
       { d: "Sábado", h: "10:00 — 20:00" },
@@ -19,11 +19,11 @@ const stores = [
     ],
     phone: "+54 11 0000 0000",
     image: "/images/storefront.jpg",
-    map: "https://maps.google.com/?q=Av.+Santa+Fe+2100+CABA",
+    map: "https://maps.google.com/?q=Av.+Santa+Fe+2727+CABA",
   },
   {
     name: "Italmarket San Telmo",
-    address: "Defensa 800, CABA",
+    address: "Defensa 863, CABA",
     hours: [
       { d: "Martes a Sábado", h: "11:00 — 20:00" },
       { d: "Domingo", h: "11:00 — 18:00" },
@@ -31,7 +31,7 @@ const stores = [
     ],
     phone: "+54 11 0000 0000",
     image: "/images/lifestyle-3.jpg",
-    map: "https://maps.google.com/?q=Defensa+800+CABA",
+    map: "https://maps.google.com/?q=Defensa+863+CABA",
   },
 ];
 

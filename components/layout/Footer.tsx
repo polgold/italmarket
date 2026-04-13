@@ -58,11 +58,11 @@ export async function Footer() {
             <div className="space-y-5 text-sm text-ink/75">
               <div>
                 <div className="font-serif text-lg text-ink">Barrio Norte</div>
-                <p className="mt-1 leading-relaxed">Av. Santa Fe 2100<br />CABA, Buenos Aires</p>
+                <p className="mt-1 leading-relaxed">Av. Santa Fe 2727<br />CABA, Buenos Aires</p>
               </div>
               <div>
                 <div className="font-serif text-lg text-ink">San Telmo</div>
-                <p className="mt-1 leading-relaxed">Defensa 800<br />CABA, Buenos Aires</p>
+                <p className="mt-1 leading-relaxed">Defensa 863<br />CABA, Buenos Aires</p>
               </div>
             </div>
           </div>

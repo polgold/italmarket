@@ -34,10 +34,10 @@ export default function ContactoPage() {
             <div>
               <h3 className="eyebrow">Sucursales</h3>
               <p className="mt-1 flex items-center gap-2 text-ink/70">
-                <MapPinIcon className="h-4 w-4" /> Av. Santa Fe 2100 · Barrio Norte
+                <MapPinIcon className="h-4 w-4" /> Av. Santa Fe 2727 · Barrio Norte
               </p>
               <p className="mt-1 flex items-center gap-2 text-ink/70">
-                <MapPinIcon className="h-4 w-4" /> Defensa 800 · San Telmo
+                <MapPinIcon className="h-4 w-4" /> Defensa 863 · San Telmo
               </p>
             </div>
             <div className="flex items-center gap-4 pt-2">

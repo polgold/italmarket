@@ -5,17 +5,17 @@ import { MapPinIcon } from "@/components/ui/Icons";
 const stores = [
   {
     name: "Barrio Norte",
-    address: "Av. Santa Fe 2100, CABA",
+    address: "Av. Santa Fe 2727, CABA",
     hours: "Lun a Sáb · 10 a 21 h",
     image: "/images/lifestyle-3.jpg",
-    map: "https://maps.google.com/?q=Av.+Santa+Fe+2100+CABA",
+    map: "https://maps.google.com/?q=Av.+Santa+Fe+2727+CABA",
   },
   {
     name: "San Telmo",
-    address: "Defensa 800, CABA",
+    address: "Defensa 863, CABA",
     hours: "Mar a Dom · 11 a 20 h",
     image: "/images/storefront.jpg",
-    map: "https://maps.google.com/?q=Defensa+800+CABA",
+    map: "https://maps.google.com/?q=Defensa+863+CABA",
   },
 ];
 
