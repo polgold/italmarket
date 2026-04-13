@@ -1,0 +1,49 @@
+{
+  "dxt_version": "0.1",
+  "name": "italmarket-wp",
+  "display_name": "Italmarket WP",
+  "version": "1.0.0",
+  "description": "Administrá el catálogo, pedidos, páginas y medios de italmarket.com.ar conversando con Claude.",
+  "long_description": "Este connector conecta Claude Desktop con el WordPress + WooCommerce de Italmarket (shop.italmarket.com.ar). Te permite crear y modificar productos, cambiar precios y stock, crear cupones, ver órdenes, y editar páginas del sitio — todo escribiendo en lenguaje natural. Requiere un token JWT que se genera desde wp-admin → WordPress MCP → Authentication Tokens. Los tokens expiran (máximo 30 días); cuando se venza, generá uno nuevo en el mismo panel y actualizá la config desde Settings → Connectors.",
+  "author": {
+    "name": "Italmarket",
+    "url": "https://italmarket.com.ar"
+  },
+  "homepage": "https://italmarket.com.ar",
+  "icon": "icon.png",
+  "keywords": [
+    "wordpress",
+    "woocommerce",
+    "italmarket",
+    "ecommerce"
+  ],
+  "server": {
+    "type": "node",
+    "mcp_config": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://shop.italmarket.com.ar/wp-json/wp/v2/wpmcp/streamable",
+        "--header",
+        "Authorization: Bearer ${user_config.token}"
+      ]
+    }
+  },
+  "user_config": {
+    "token": {
+      "type": "string",
+      "title": "Token JWT de WordPress MCP",
+      "description": "Generalo desde shop.italmarket.com.ar/wp-admin → Ajustes → WordPress MCP → Authentication Tokens. Elegí 30 días de duración.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
