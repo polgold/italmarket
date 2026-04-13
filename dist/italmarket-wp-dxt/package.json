@@ -1,0 +1,6 @@
+{
+  "name": "italmarket-wp-dxt",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Direct HTTP<->stdio bridge for WordPress MCP streamable endpoint, no external deps."
+}
