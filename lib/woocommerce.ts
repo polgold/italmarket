@@ -8,20 +8,41 @@ import { decodeEntities } from "./utils";
  * Remote → local image map produced by scripts/optimize-catalog-images.mjs.
  * Read once at module load; missing file is non-fatal (falls back to remote
  * URLs, which is what the site used before the optimization step).
+ *
+ * Lookups are host-agnostic: we index entries by URL pathname so the map keeps
+ * working after a domain migration (e.g. italmarket.com.ar → shop.italmarket.com.ar)
+ * without regenerating the cache.
  */
 type ImageMapEntry = { thumb: string; large: string };
 let imageMap: Record<string, ImageMapEntry> = {};
+let imageMapByPath: Record<string, ImageMapEntry> = {};
 try {
   const p = path.join(process.cwd(), "public", "images", "catalog", "index.json");
   if (fs.existsSync(p)) {
     imageMap = JSON.parse(fs.readFileSync(p, "utf8")) as Record<string, ImageMapEntry>;
+    imageMapByPath = Object.fromEntries(
+      Object.entries(imageMap).map(([url, entry]) => {
+        try {
+          return [new URL(url).pathname, entry] as const;
+        } catch {
+          return [url, entry] as const;
+        }
+      }),
+    );
   }
 } catch {
   /* ignore */
 }
 
 export function rewriteImage(src: string): string {
-  return imageMap[src]?.large ?? src;
+  if (imageMap[src]) return imageMap[src].large;
+  try {
+    const hit = imageMapByPath[new URL(src).pathname];
+    if (hit) return hit.large;
+  } catch {
+    /* non-URL input — fall through */
+  }
+  return src;
 }
 
 /**
