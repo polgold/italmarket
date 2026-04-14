@@ -5,12 +5,14 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { RecipeCart, type RecipeCartLineIn } from "@/components/recipe/RecipeCart";
 import { HeroProduct } from "@/components/recipe/HeroProduct";
+import { SeeAlso, type SeeAlsoItem } from "@/components/seo/SeeAlso";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { getRecipe, recipes } from "@/lib/recipes";
 import { findRelatedProducts, resolveIngredients } from "@/lib/recipes/match";
 import type { ResolvedIngredient } from "@/lib/recipes/types";
 import { getProducts } from "@/lib/woocommerce";
+import { findRelatedGuides, findSimilarRecipes } from "@/lib/related";
 
 export const revalidate = 3600;
 
@@ -132,6 +134,24 @@ export default async function RecetaPage({ params }: PageProps) {
     { name: "Inicio", url: `${SITE_URL}/` },
     { name: "Recetas", url: `${SITE_URL}/recetas` },
     { name: recipe.title, url: `${SITE_URL}/recetas/${recipe.slug}` },
+  ];
+
+  const similarRecipes = findSimilarRecipes(recipe, 3);
+  const guideSeeds = [...recipe.keywords, recipe.category, recipe.region ?? ""].filter(Boolean);
+  const relatedGuides = findRelatedGuides(guideSeeds, 2);
+  const seeAlsoItems: SeeAlsoItem[] = [
+    ...similarRecipes.map((r) => ({
+      href: `/recetas/${r.slug}`,
+      label: r.title,
+      eyebrow: r.region ?? r.category,
+      description: r.summary,
+    })),
+    ...relatedGuides.map((g) => ({
+      href: `/guias/${g.slug}`,
+      label: g.title,
+      eyebrow: "Guía",
+      description: g.summary,
+    })),
   ];
 
   return (
@@ -263,6 +283,12 @@ export default async function RecetaPage({ params }: PageProps) {
       </section>
 
       <RecipeCart lines={cartLines} pairingLines={pairingLines} recipeTitle={recipe.title} />
+
+      <SeeAlso
+        heading="Seguí cocinando"
+        eyebrow="Ver también"
+        items={seeAlsoItems}
+      />
     </>
   );
 }

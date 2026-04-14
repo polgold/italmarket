@@ -18,14 +18,15 @@ export function Hero() {
 
       <div className="container-x relative z-10 flex h-full flex-col justify-end pb-16 text-ivory-50 sm:justify-center sm:pb-0">
         <div className="max-w-2xl animate-fade-up">
-          <span className="eyebrow text-ivory-50/80">— Delizie Italiane · Buenos Aires</span>
-          <h1 className="mt-5 font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-[84px]">
-            Un viaggio<br />
-            <em className="italic text-ivory-50/90">di sapori</em>
+          <span className="eyebrow text-ivory-50/80">— Un viaggio di sapori · Dal 2015</span>
+          <h1 className="mt-5 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-[72px]">
+            Productos italianos importados<br />
+            <em className="italic text-ivory-50/90">en Buenos Aires</em>
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-ivory-50/80 sm:text-lg">
-            Productos italianos seleccionados uno por uno. Pastas artesanales, aceites de primera
-            presión, salumi, formaggi y vinos, directo desde Italia a tu mesa.
+            Pastas artesanales, aceites de oliva extra virgen, salumi, quesos, vinos y dolci
+            importados directo desde Italia. Sucursales en Barrio Norte y San Telmo, envíos a
+            todo el país.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link href="/productos" className="btn-primary bg-ivory-50 text-ink hover:bg-ivory-100">

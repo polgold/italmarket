@@ -2,30 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useCart } from "@/hooks/useCart";
 import { CloseIcon } from "@/components/ui/Icons";
 import { cn, formatPrice } from "@/lib/utils";
 
 export function CartDrawer() {
-  const { isOpen, closeCart, items, updateQuantity, removeItem, subtotal, pair } = useCart();
-  const [pairCode, setPairCode] = useState<string | null>(null);
-  const [pairExpires, setPairExpires] = useState<number | null>(null);
-  const [pairLoading, setPairLoading] = useState(false);
-
-  const requestPair = async () => {
-    setPairLoading(true);
-    try {
-      const { code, expires_in_seconds } = await pair();
-      setPairCode(code);
-      setPairExpires(Date.now() + expires_in_seconds * 1000);
-    } catch (e) {
-      console.error(e);
-      alert("No se pudo generar el código de pareo.");
-    } finally {
-      setPairLoading(false);
-    }
-  };
+  const { isOpen, closeCart, items, updateQuantity, removeItem, subtotal } = useCart();
 
   return (
     <>
@@ -132,34 +114,6 @@ export function CartDrawer() {
             </div>
           </>
         )}
-
-        {/* Pair-with-Claude section — always visible at the bottom of the drawer */}
-        <div className="border-t border-ink/10 bg-ivory-100/60 px-6 py-5">
-          {pairCode ? (
-            <div>
-              <p className="eyebrow mb-2">Código de pareo</p>
-              <p className="font-serif text-3xl tracking-[0.3em] text-ink">{pairCode}</p>
-              <p className="mt-2 text-[11px] text-ink/60">
-                Decile a Claude: <em>“pareate con el código {pairCode}”</em>.
-                {pairExpires ? ` Expira a las ${new Date(pairExpires).toLocaleTimeString()}.` : ""}
-              </p>
-              <button
-                onClick={() => setPairCode(null)}
-                className="mt-3 text-[11px] uppercase tracking-extra-wide text-ink/50 hover:text-ink"
-              >
-                Cerrar
-              </button>
-            </div>
-          ) : (
-            <button
-              onClick={requestPair}
-              disabled={pairLoading}
-              className="w-full border border-ink/80 px-4 py-3 text-[11px] uppercase tracking-extra-wide text-ink hover:bg-ink hover:text-ivory-50 disabled:opacity-60"
-            >
-              {pairLoading ? "Generando código…" : "Conectar con Claude"}
-            </button>
-          )}
-        </div>
       </aside>
     </>
   );

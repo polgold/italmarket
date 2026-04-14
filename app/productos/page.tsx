@@ -4,9 +4,12 @@ import { getCategories, getProducts } from "@/lib/woocommerce";
 import { CategoryGrid } from "@/components/product/CategoryGrid";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SeeAlso, type SeeAlsoItem } from "@/components/seo/SeeAlso";
 import { SITE_URL } from "@/lib/seo";
-import { breadcrumbSchema } from "@/lib/structured-data";
+import { breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+import { getCategorySeo } from "@/lib/seo-categories";
 import { stripHtml } from "@/lib/utils";
+import { findRecipesForCategory, findRelatedGuides } from "@/lib/related";
 
 export const revalidate = 300;
 
@@ -29,16 +32,21 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   if (!current) {
     return { title: "Categoría no encontrada", robots: { index: false } };
   }
-  const desc = current.description
-    ? stripHtml(current.description).slice(0, 200)
-    : `Comprá ${current.name.toLowerCase()} italianos auténticos en Italmarket. Productos importados directamente desde Italia con envíos a todo el país.`;
+  const seo = getCategorySeo(current.slug);
+  const title =
+    seo?.metaTitle ?? `${current.name} italianos · Tienda online`;
+  const description =
+    seo?.metaDescription ??
+    (current.description
+      ? stripHtml(current.description).slice(0, 200)
+      : `Comprá ${current.name.toLowerCase()} italianos auténticos en Italmarket. Productos importados directamente desde Italia con envíos a todo el país.`);
   return {
-    title: `${current.name} italianos · Tienda online`,
-    description: desc,
+    title,
+    description,
     alternates: { canonical: `/productos?categoria=${current.slug}` },
     openGraph: {
-      title: `${current.name} italianos · Italmarket`,
-      description: desc,
+      title,
+      description,
       url: `${SITE_URL}/productos?categoria=${current.slug}`,
       type: "website",
     },
@@ -104,18 +112,39 @@ export default async function ProductosPage({ searchParams }: PageProps) {
   }
 
   const products = await getProducts({ category: current.id });
+  const seo = getCategorySeo(current.slug);
+
+  const relatedRecipes = findRecipesForCategory(current.slug, 3);
+  const relatedGuides = findRelatedGuides([current.slug, current.name], 2);
+  const seeAlsoItems: SeeAlsoItem[] = [
+    ...relatedRecipes.map((r) => ({
+      href: `/recetas/${r.slug}`,
+      label: r.title,
+      eyebrow: "Receta",
+      description: r.summary,
+    })),
+    ...relatedGuides.map((g) => ({
+      href: `/guias/${g.slug}`,
+      label: g.title,
+      eyebrow: "Guía",
+      description: g.summary,
+    })),
+  ];
+
+  const schemas: object[] = [
+    breadcrumbSchema([
+      { name: "Inicio", url: `${SITE_URL}/` },
+      { name: "Tienda", url: `${SITE_URL}/productos` },
+      { name: current.name, url: `${SITE_URL}/productos?categoria=${current.slug}` },
+    ]),
+  ];
+  if (seo) schemas.push(faqSchema(seo.faqs));
 
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Inicio", url: `${SITE_URL}/` },
-          { name: "Tienda", url: `${SITE_URL}/productos` },
-          { name: current.name, url: `${SITE_URL}/productos?categoria=${current.slug}` },
-        ])}
-      />
+      <JsonLd data={schemas} />
       <section className="border-b border-ink/10 bg-ivory-100">
-        <div className="container-x py-10 text-center lg:py-14">
+        <div className="container-x py-12 text-center lg:py-16">
           <nav className="mb-4 flex items-center justify-center gap-2 text-[11px] uppercase tracking-extra-wide text-ink/50">
             <Link href="/productos" className="hover:text-ink">
               Tienda
@@ -123,12 +152,21 @@ export default async function ProductosPage({ searchParams }: PageProps) {
             <span>/</span>
             <span className="text-ink/80">{current.name}</span>
           </nav>
-          <h1 className="font-serif text-3xl text-ink sm:text-4xl lg:text-5xl">{current.name}</h1>
-          {current.description && (
-            <p
-              className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/60"
-              dangerouslySetInnerHTML={{ __html: current.description }}
-            />
+          {seo && <span className="eyebrow">{seo.eyebrow}</span>}
+          <h1 className="mt-2 font-serif text-3xl text-ink sm:text-4xl lg:text-5xl">
+            {seo?.h1 ?? current.name}
+          </h1>
+          {seo ? (
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-ink/70">
+              {seo.intro}
+            </p>
+          ) : (
+            current.description && (
+              <p
+                className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/60"
+                dangerouslySetInnerHTML={{ __html: current.description }}
+              />
+            )
           )}
         </div>
       </section>
@@ -163,6 +201,33 @@ export default async function ProductosPage({ searchParams }: PageProps) {
           )}
         </div>
       </section>
+
+      {seo && (
+        <section className="border-t border-ink/10 bg-ivory-100 py-16 lg:py-20">
+          <div className="container-x mx-auto max-w-3xl">
+            <div className="text-center">
+              <span className="eyebrow">Preguntas frecuentes</span>
+              <h2 className="mt-3 font-serif text-3xl text-ink sm:text-4xl">
+                Sobre {current.name.toLowerCase()}
+              </h2>
+            </div>
+            <dl className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
+              {seo.faqs.map((f, i) => (
+                <div key={i} className="py-6">
+                  <dt className="font-serif text-xl text-ink">{f.q}</dt>
+                  <dd className="mt-3 text-base leading-relaxed text-ink/75">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
+      <SeeAlso
+        heading={`Recetas y guías con ${current.name.toLowerCase()}`}
+        eyebrow="Ver también"
+        items={seeAlsoItems}
+      />
     </>
   );
 }

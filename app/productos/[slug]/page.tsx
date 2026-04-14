@@ -6,9 +6,15 @@ import { getProductBySlug, getProducts } from "@/lib/woocommerce";
 import { AddToCartButton } from "@/components/product/AddToCartButton";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SeeAlso, type SeeAlsoItem } from "@/components/seo/SeeAlso";
 import { SITE_URL } from "@/lib/seo";
 import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
 import { formatPrice, stripHtml } from "@/lib/utils";
+import {
+  findBrandForProduct,
+  findRecipesForProduct,
+  findRelatedGuides,
+} from "@/lib/related";
 
 export const revalidate = 300;
 
@@ -67,6 +73,40 @@ export default async function ProductPage({ params }: PageProps) {
   const related = (await getProducts())
     .filter((p) => p.id !== product.id && p.categories[0]?.id === product.categories[0]?.id)
     .slice(0, 4);
+
+  const relatedRecipes = findRecipesForProduct(product, 3);
+  const brand = findBrandForProduct(product);
+  const guideSeedKeywords = [
+    product.name,
+    product.categories[0]?.slug ?? "",
+    product.categories[0]?.name ?? "",
+  ].filter(Boolean);
+  const relatedGuides = findRelatedGuides(guideSeedKeywords, 2);
+
+  const seeAlsoItems: SeeAlsoItem[] = [
+    ...relatedRecipes.map((r) => ({
+      href: `/recetas/${r.slug}`,
+      label: r.title,
+      eyebrow: "Receta",
+      description: r.summary,
+    })),
+    ...(brand
+      ? [
+          {
+            href: `/marca/${brand.slug}`,
+            label: `Ver más de ${brand.name}`,
+            eyebrow: "Marca",
+            description: brand.eyebrow,
+          },
+        ]
+      : []),
+    ...relatedGuides.map((g) => ({
+      href: `/guias/${g.slug}`,
+      label: g.title,
+      eyebrow: "Guía",
+      description: g.summary,
+    })),
+  ];
 
   const image = product.images[0]?.src || "/images/storefront.jpg";
   const productUrl = `${SITE_URL}/productos/${product.slug}`;
@@ -180,6 +220,12 @@ export default async function ProductPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      <SeeAlso
+        heading="Recetas, marcas y guías con este producto"
+        eyebrow="Ver también"
+        items={seeAlsoItems}
+      />
     </>
   );
 }

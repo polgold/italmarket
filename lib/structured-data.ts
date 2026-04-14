@@ -162,6 +162,35 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+/**
+ * Brand schema for /marca/[slug]. Google uses it to link a brand to the
+ * products sold under it and to surface the brand in knowledge panels.
+ */
+export function brandSchema(input: {
+  name: string;
+  url: string;
+  logo?: string;
+  description: string;
+  foundedYear?: number;
+  country?: string;
+  website?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "@id": `${input.url}#brand`,
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    ...(input.logo ? { logo: input.logo } : {}),
+    ...(input.website ? { sameAs: [input.website] } : {}),
+    ...(input.foundedYear ? { foundingDate: String(input.foundedYear) } : {}),
+    ...(input.country
+      ? { brandOfCountry: { "@type": "Country", name: input.country } }
+      : {}),
+  };
+}
+
 export function faqSchema(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

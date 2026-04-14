@@ -23,6 +23,16 @@
   cafés (espresso italiano) y dolci (panettone, tiramisú, biscotti).
 - [Sitemap XML con todos los productos](https://italmarket.com.ar/sitemap.xml)
 
+## Landings temáticas
+
+- [Quesos italianos](https://italmarket.com.ar/quesos-italianos) — burrata, mascarpone, ricotta, caciocavallo, bocconcino y guía de quesos italianos por región.
+- [Vinos italianos](https://italmarket.com.ar/vinos-italianos) — Prosecco DOCG, grappa, sambuca, vermouth y selección por maridaje.
+
+## Marcas
+
+- [Índice de marcas italianas](https://italmarket.com.ar/marca) — historia, productos y proveedor por marca.
+- Marcas con presencia en catálogo: Divella (Puglia, 1890), Perugina (Umbria, 1907), Menabrea (Piemonte, 1846), Giuliano Tartufi (Umbria), Daleo (pizza napoletana), Bijuo (chocolate gift).
+
 ## Sucursales
 
 - **Barrio Norte** · Av. Santa Fe 2727, CABA · WhatsApp +54 9 11 5136-4554
@@ -48,9 +58,17 @@ Explicadas paso a paso con la técnica tradicional y los ingredientes del catál
 
 - [Sobre Italmarket](https://italmarket.com.ar/nosotros)
 - [Sucursales y horarios](https://italmarket.com.ar/sucursales)
+- [Cómo comprar (pasos, pagos, envíos, tiempos Andreani, FAQ)](https://italmarket.com.ar/como-comprar)
 - [Contacto](https://italmarket.com.ar/contacto)
 - Email: info@italmarket.com.ar
 - Instagram: [@italmarket.ar](https://instagram.com/italmarket.ar)
+
+## Cómo comprar (resumen)
+
+- Medios de pago: tarjeta de crédito/débito, Mercado Pago, transferencia bancaria, efectivo en tienda.
+- Transferencia: requiere enviar comprobante por WhatsApp; liberamos el pedido tras verificar el pago (≤ 24 hs hábiles).
+- Envío por Andreani: despacho dentro de 24–48 hs hábiles tras confirmar pago. Tiempos de entrega gestionados por Andreani — CABA/GBA 48–72 hs, PBA 3–5 días hábiles, interior 5–7 días hábiles.
+- Retiro en sucursal: sin costo, en Barrio Norte (Av. Santa Fe 2727) o San Telmo (Defensa 863).
 
 ## Palabras clave asociadas
 

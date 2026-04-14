@@ -48,8 +48,10 @@ export async function Footer() {
             <ul className="space-y-3 text-sm text-ink/75">
               <li><Link href="/recetas" className="link-underline">Recetas</Link></li>
               <li><Link href="/guias" className="link-underline">Guías</Link></li>
+              <li><Link href="/marca" className="link-underline">Marcas</Link></li>
               <li><Link href="/nosotros" className="link-underline">Nosotros</Link></li>
               <li><Link href="/sucursales" className="link-underline">Sucursales</Link></li>
+              <li><Link href="/como-comprar" className="link-underline">Cómo comprar</Link></li>
               <li><Link href="/contacto" className="link-underline">Contacto</Link></li>
             </ul>
           </div>
