@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Downloads every product image from the WooCommerce Store API, resizes it
- * into thumb (1200px, q60) and large (2560px, q70) JPGs using ImageMagick 7,
+ * into thumb (400px, q60) and large (1200px, q75) JPGs using ImageMagick 7,
  * and writes an index mapping remote URL → local paths that lib/woocommerce.ts
  * consumes to rewrite product image URLs at render time.
  *
@@ -105,7 +105,7 @@ async function convertOne(url) {
   if (!fs.existsSync(thumb)) {
     await magick([
       orig,
-      "-resize", "1200x1200>",
+      "-resize", "400x400>",
       "-strip",
       "-interlace", "Plane",
       "-sampling-factor", "4:2:0",
@@ -116,11 +116,11 @@ async function convertOne(url) {
   if (!fs.existsSync(large)) {
     await magick([
       orig,
-      "-resize", "2560x2560>",
+      "-resize", "1200x1200>",
       "-strip",
       "-interlace", "Plane",
       "-sampling-factor", "4:2:0",
-      "-quality", "70",
+      "-quality", "75",
       large,
     ]);
   }
