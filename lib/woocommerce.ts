@@ -215,6 +215,13 @@ function mapCategory(c: StoreCategoryFull): Category {
  * are already excluded by the Store API; we additionally filter out anything
  * that isn't in stock so the storefront never shows dead SKUs.
  */
+function warnFallback(endpoint: string, err: unknown): void {
+  const msg = err instanceof Error ? err.message : String(err);
+  console.error(
+    `[woocommerce] ${endpoint} failed against ${SITE_URL} — falling back to mock data. ${msg}`,
+  );
+}
+
 export async function getProducts(params: Record<string, string | number> = {}): Promise<Product[]> {
   try {
     const list = await storeFetchAll<StoreProduct>("/products", {
@@ -225,7 +232,8 @@ export async function getProducts(params: Record<string, string | number> = {}):
     return list
       .filter((p) => p.is_in_stock !== false && p.is_purchasable !== false)
       .map(mapProduct);
-  } catch {
+  } catch (err) {
+    warnFallback("getProducts", err);
     return mockProducts;
   }
 }
@@ -234,7 +242,8 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   try {
     const { data } = await storeFetch<StoreProduct[]>("/products", { slug });
     return data[0] ? mapProduct(data[0]) : null;
-  } catch {
+  } catch (err) {
+    warnFallback("getProductBySlug", err);
     return mockProducts.find((p) => p.slug === slug) ?? null;
   }
 }
@@ -250,7 +259,8 @@ export async function getCategories(): Promise<Category[]> {
     return data
       .filter((c) => (c.count ?? 0) > 0)
       .map(mapCategory);
-  } catch {
+  } catch (err) {
+    warnFallback("getCategories", err);
     return mockCategories;
   }
 }

@@ -41,8 +41,11 @@ In Hostinger's **hPanel → Websites → Node.js**:
    `node_modules/next/dist/bin/next` with arg `start`.
 5. **Build command**: `npm install && npm run build`.
 6. **Run command**: `npm start`.
-7. **Environment variables**: add `WC_SITE_URL=https://italmarket.com.ar`
-   (optional — it's the default).
+7. **Environment variables**: leave empty — the default
+   `WC_SITE_URL=https://shop.italmarket.com.ar` is already correct.
+   **Do not set it to `https://italmarket.com.ar`**: that host is served by
+   this Next.js app, not by WordPress, so the Store API returns 404 and the
+   site silently falls back to mock catalog data.
 8. Deploy. The temporary site URL from Hostinger should serve the storefront
    within ~60s of the first build finishing.
 
