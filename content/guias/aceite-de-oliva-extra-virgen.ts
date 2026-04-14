@@ -7,7 +7,7 @@ export const aceiteOlivaExtraVirgen: Guide = {
     "Qué significa extra virgen, cómo leer una etiqueta, qué mirar en la botella y cuándo usar cada tipo. La guía completa.",
   description:
     "Guía completa para elegir aceite de oliva extra virgen (AOVE) italiano: qué significa cada categoría, cómo leer la etiqueta, variedades de aceitunas, acidez, DOP e IGP, y cómo usarlo en la cocina.",
-  image: "/images/lifestyle-1.jpg",
+  image: "/images/olio-oliva.jpg",
   imageAlt: "Aceite de oliva extra virgen italiano con olivas",
   readTimeMin: 6,
   keywords: [

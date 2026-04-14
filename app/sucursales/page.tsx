@@ -47,7 +47,7 @@ const stores = [
     ],
     phone: "+54 9 11 6783-6252",
     whatsapp: "https://wa.me/5491167836252",
-    image: "/images/lifestyle-3.jpg",
+    image: "/images/san-telmo.jpg",
     map: "https://maps.google.com/?q=Defensa+863+CABA",
   },
 ];

@@ -7,7 +7,7 @@ export const proseccoDocDocg: Guide = {
     "No todos los proseccos son iguales. Qué significa cada denominación, cómo leer la etiqueta y cuándo vale la pena pagar más.",
   description:
     "Guía del Prosecco italiano: diferencias entre DOC, DOCG, Superiore de Valdobbiadene y Conegliano. Extra dry, brut y dry. Cómo elegir, maridaje y las mejores zonas productoras del Véneto.",
-  image: "/images/lifestyle-3.jpg",
+  image: "/images/prosecco.jpg",
   imageAlt: "Botella de Prosecco DOCG Valdobbiadene con copas",
   readTimeMin: 6,
   keywords: [

@@ -89,7 +89,7 @@ export const STORES: StoreLocation[] = [
     addressRegion: "CABA",
     postalCode: "C1065",
     telephone: "+54 9 11 6783-6252",
-    image: `${SITE_URL}/images/lifestyle-3.jpg`,
+    image: `${SITE_URL}/images/san-telmo.jpg`,
     url: `${SITE_URL}/sucursales#san-telmo`,
     mapUrl: "https://maps.google.com/?q=Defensa+863+CABA",
     hours: [

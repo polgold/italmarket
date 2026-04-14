@@ -7,7 +7,7 @@ export const pastaSecaVsFresca: Guide = {
     "No son equivalentes ni la una es mejor que la otra: son pastas distintas, con usos específicos. La guía completa.",
   description:
     "Diferencias entre pasta seca y pasta fresca italiana: ingredientes, textura, tiempo de cocción, salsas recomendadas para cada una. Qué pasta elegir para carbonara, ragù, pesto o tortellini.",
-  image: "/images/lifestyle-2.jpg",
+  image: "/images/pasta-seca.jpg",
   imageAlt: "Pasta seca y pasta fresca italiana comparadas",
   readTimeMin: 5,
   keywords: [

@@ -7,14 +7,14 @@ const stores = [
     name: "Barrio Norte",
     address: "Av. Santa Fe 2727, CABA",
     hours: "Lun a Sáb · 10 a 21 h",
-    image: "/images/lifestyle-3.jpg",
+    image: "/images/storefront.jpg",
     map: "https://maps.google.com/?q=Av.+Santa+Fe+2727+CABA",
   },
   {
     name: "San Telmo",
     address: "Defensa 863, CABA",
     hours: "Mar a Dom · 11 a 20 h",
-    image: "/images/storefront.jpg",
+    image: "/images/san-telmo.jpg",
     map: "https://maps.google.com/?q=Defensa+863+CABA",
   },
 ];

@@ -14,8 +14,8 @@ export default function NosotrosPage() {
     <>
       <section className="relative h-[60vh] min-h-[440px] w-full overflow-hidden bg-ink">
         <Image
-          src="/images/lifestyle-3.jpg"
-          alt="Italmarket"
+          src="/images/mesa-italiana.jpg"
+          alt="Mesa italiana servida con platos, pan y flores"
           fill
           priority
           className="object-cover opacity-80"
@@ -40,7 +40,7 @@ export default function NosotrosPage() {
       <section className="bg-ivory-100 py-24">
         <div className="container-x grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <Image src="/images/lifestyle-1.jpg" alt="Pastas italianas" fill className="object-cover" />
+            <Image src="/images/still-life-pasta.jpg" alt="Still-life con harina, ajo y pasta italiana" fill className="object-cover" />
           </div>
           <div>
             <span className="eyebrow">Il metodo</span>
