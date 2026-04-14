@@ -50,6 +50,11 @@ export function decodeEntities(input: string): string {
   });
 }
 
+export function stripHtml(input: string): string {
+  if (!input) return "";
+  return decodeEntities(input.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+}
+
 export function slugify(input: string) {
   return input
     .toLowerCase()

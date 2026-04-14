@@ -3,17 +3,46 @@ import type { Metadata } from "next";
 import { getCategories, getProducts } from "@/lib/woocommerce";
 import { CategoryGrid } from "@/components/product/CategoryGrid";
 import { ProductGrid } from "@/components/product/ProductGrid";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
+import { stripHtml } from "@/lib/utils";
 
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Tienda",
-  description:
-    "Tienda online de Italmarket: productos italianos importados, organizados por categoría tal como en nuestra tienda física.",
-};
-
 interface PageProps {
   searchParams: Promise<{ categoria?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const { categoria } = await searchParams;
+  if (!categoria) {
+    return {
+      title: "Tienda online de productos italianos",
+      description:
+        "Tienda online de Italmarket: productos italianos importados directamente desde Italia. Pastas, aceites de oliva, salumi, quesos, vinos, salsas y dolci. Envíos a todo el país y retiro en Barrio Norte o San Telmo.",
+      alternates: { canonical: "/productos" },
+    };
+  }
+  const categories = await getCategories();
+  const current = categories.find((c) => c.slug === categoria);
+  if (!current) {
+    return { title: "Categoría no encontrada", robots: { index: false } };
+  }
+  const desc = current.description
+    ? stripHtml(current.description).slice(0, 200)
+    : `Comprá ${current.name.toLowerCase()} italianos auténticos en Italmarket. Productos importados directamente desde Italia con envíos a todo el país.`;
+  return {
+    title: `${current.name} italianos · Tienda online`,
+    description: desc,
+    alternates: { canonical: `/productos?categoria=${current.slug}` },
+    openGraph: {
+      title: `${current.name} italianos · Italmarket`,
+      description: desc,
+      url: `${SITE_URL}/productos?categoria=${current.slug}`,
+      type: "website",
+    },
+  };
 }
 
 /**
@@ -30,6 +59,12 @@ export default async function ProductosPage({ searchParams }: PageProps) {
   if (!categoria) {
     return (
       <>
+        <JsonLd
+          data={breadcrumbSchema([
+            { name: "Inicio", url: `${SITE_URL}/` },
+            { name: "Tienda", url: `${SITE_URL}/productos` },
+          ])}
+        />
         <section className="border-b border-ink/10 bg-ivory-100">
           <div className="container-x py-10 text-center lg:py-14">
             <span className="eyebrow">Tienda</span>
@@ -72,6 +107,13 @@ export default async function ProductosPage({ searchParams }: PageProps) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", url: `${SITE_URL}/` },
+          { name: "Tienda", url: `${SITE_URL}/productos` },
+          { name: current.name, url: `${SITE_URL}/productos?categoria=${current.slug}` },
+        ])}
+      />
       <section className="border-b border-ink/10 bg-ivory-100">
         <div className="container-x py-10 text-center lg:py-14">
           <nav className="mb-4 flex items-center justify-center gap-2 text-[11px] uppercase tracking-extra-wide text-ink/50">

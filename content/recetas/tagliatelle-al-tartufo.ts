@@ -1,0 +1,107 @@
+import type { Recipe } from "@/lib/recipes/types";
+
+export const tagliatelleAlTartufo: Recipe = {
+  slug: "tagliatelle-al-tartufo",
+  title: "Tagliatelle al tartufo",
+  italianTitle: "Tagliatelle al tartufo nero",
+  summary:
+    "La pasta más lujosa del Piamonte y Umbría: tagliatelle al huevo, manteca nocciola y láminas de trufa negra.",
+  description:
+    "Receta italiana tradicional de tagliatelle al tartufo: pasta al huevo con manteca nocciola, crema de trufa negra y lamelle di tartufo. Plato festivo de la cocina italiana de alta gama, lista en 20 minutos.",
+  image: "/images/recipes/tagliatelle-al-tartufo.jpg",
+  imageAlt: "Plato de tagliatelle al huevo con crema de tartufo y lamelle de trufa negra",
+  region: "Umbria",
+  prepTimeMin: 5,
+  cookTimeMin: 10,
+  servings: 2,
+  difficulty: "fácil",
+  category: "pasta",
+  keywords: [
+    "tagliatelle al tartufo",
+    "pasta al tartufo",
+    "pasta con trufa",
+    "tagliatelle tartufo nero",
+    "receta tartufo",
+    "pasta trufa italiana",
+  ],
+  intro: [
+    "El tartufo — trufa, en español — es el hongo más caro del mundo. Crece en simbiosis con las raíces de ciertos árboles en Piamonte, Umbría y Toscana, y se recolecta con perros entrenados entre octubre y enero (tartufo bianco) o mayo y septiembre (tartufo nero estivo).",
+    "Esta pasta es el plato más clásico para aprovechar su aroma intenso: tagliatelle al huevo, manteca derretida hasta tostar, y trufa al final, fuera del fuego. Cuanto más simple, mejor se expresa.",
+  ],
+  ingredients: [
+    {
+      label: "Tagliatelle al huevo",
+      quantity: 250,
+      unit: "g",
+      keywords: ["tagliatelle", "fettuccine al uovo", "pappardelle al uovo", "fettuccine"],
+      negativeKeywords: ["sin gluten", "gluten free", "al tartufo", "al limone"],
+    },
+    {
+      label: "Manteca",
+      quantity: 80,
+      unit: "g",
+      note: "Idealmente italiana, con alto contenido graso (82%).",
+    },
+    {
+      label: "Crema di tartufo o salsa tartufata",
+      quantity: 80,
+      unit: "g",
+      keywords: ["salsa tartufata", "crema di tartufo", "tartufo estivo", "crema funghi"],
+      hero: true,
+    },
+    {
+      label: "Lamelle di tartufo nero",
+      quantity: 15,
+      unit: "g",
+      keywords: ["lamelle di tartufo", "tartufo estivo intero", "tartufo"],
+      negativeKeywords: ["aceto", "aceite"],
+      note: "Láminas de trufa en aceite o trufa entera para laminar. El producto es caro pero dura meses en heladera cerrado.",
+    },
+    {
+      label: "Parmigiano Reggiano",
+      quantity: 40,
+      unit: "g",
+      keywords: ["parmigiano reggiano", "parmigiano", "parmesano", "grana padano", "caciocavallo"],
+      negativeKeywords: ["mermelada", "granada"],
+    },
+    {
+      label: "Sal gruesa",
+      quantity: "a gusto",
+    },
+    {
+      label: "Pimienta negra",
+      quantity: "a gusto",
+      keywords: ["pimienta negra", "pepe nero"],
+      negativeKeywords: ["peperoncino"],
+    },
+  ],
+  steps: [
+    "Poné agua a hervir con sal gruesa.",
+    "En una sartén amplia, derretí la manteca a fuego medio hasta que empiece a dorar ligeramente y desprenda aroma a avellana. Apagá el fuego.",
+    "Agregá la crema di tartufo o salsa tartufata a la manteca tibia. Mezclá sin volver al fuego.",
+    "Cociná las tagliatelle 1 minuto menos que la caja — la pasta al huevo cocina rápido.",
+    "Reservá 1 taza de agua de cocción. Colá.",
+    "Pasá las tagliatelle a la sartén. Mezclá con movimientos envolventes. Si está seca, agregá agua de cocción de a cucharadas.",
+    "Serví inmediatamente. Terminá con Parmigiano rallado y las lamelle di tartufo distribuidas generosamente por encima — NUNCA dentro de la sartén caliente, el tartufo se abre cuando se enfría.",
+    "Pimienta negra al gusto y a la mesa.",
+  ],
+  tips: [
+    "El tartufo NUNCA se cocina. Se ralla o se lamina al final, sobre el plato caliente.",
+    "Si tenés tartufo estivo intero, guardalo en un frasco con arroz crudo: el arroz absorbe el aroma y después lo usás para un risotto bianco.",
+    "La manteca a punto nocciola (avellana) es clave: tiene que dorar, no quemarse.",
+    "Este plato va mejor con pasta al huevo (tagliatelle, fettuccine) que con pasta seca — el huevo amplifica la trufa.",
+  ],
+  history:
+    "El tartufo es comida de emperadores desde la Roma antigua — Cicerón lo describe en sus cartas. Pero fue en la Italia del Renacimiento donde se consolidó como ingrediente de gala: Caterina de Medici llevó la tradición a Francia cuando se casó con Enrique II. En Alba (Piamonte), cada otoño se celebra la Fiera Internazionale del Tartufo Bianco d'Alba, con subastas donde una trufa blanca puede superar los 100.000 euros. El tartufo nero (estivo e invernale) es más accesible pero igual de aromático para esta pasta. Italia produce 60% del tartufo mundial, con protección DOP para varias variedades regionales.",
+  pairingKeywords: [
+    "aceto balsamico",
+    "prosecco",
+    "chianti",
+    "barolo",
+    "olio extra virgen",
+    "burrata",
+    "parmigiano",
+    "tarallini",
+  ],
+  publishedAt: "2026-04-13",
+};

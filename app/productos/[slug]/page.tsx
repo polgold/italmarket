@@ -5,7 +5,10 @@ import { notFound } from "next/navigation";
 import { getProductBySlug, getProducts } from "@/lib/woocommerce";
 import { AddToCartButton } from "@/components/product/AddToCartButton";
 import { ProductGrid } from "@/components/product/ProductGrid";
-import { formatPrice } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
+import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
+import { formatPrice, stripHtml } from "@/lib/utils";
 
 export const revalidate = 300;
 
@@ -13,17 +16,45 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+/**
+ * Pre-render every product slug at build time so crawlers (Google + LLMs)
+ * hit static HTML instead of waiting on an on-demand WooCommerce round trip.
+ * Fresh data still flows in through ISR (`revalidate = 300`).
+ */
+export async function generateStaticParams() {
+  try {
+    const products = await getProducts();
+    return products.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
-  if (!product) return { title: "Producto no encontrado" };
+  if (!product) return { title: "Producto no encontrado", robots: { index: false } };
+
+  const description = stripHtml(product.short_description || product.description).slice(0, 300);
+  const image = product.images[0]?.src;
+  const canonical = `/productos/${product.slug}`;
+
   return {
     title: product.name,
-    description: product.short_description,
+    description,
+    alternates: { canonical },
     openGraph: {
       title: product.name,
-      description: product.short_description,
-      images: product.images[0]?.src ? [product.images[0].src] : [],
+      description,
+      url: `${SITE_URL}${canonical}`,
+      type: "website",
+      images: image ? [{ url: image, alt: product.name }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description,
+      images: image ? [image] : [],
     },
   };
 }
@@ -38,9 +69,22 @@ export default async function ProductPage({ params }: PageProps) {
     .slice(0, 4);
 
   const image = product.images[0]?.src || "/images/storefront.jpg";
+  const productUrl = `${SITE_URL}/productos/${product.slug}`;
+  const breadcrumbs: { name: string; url: string }[] = [
+    { name: "Inicio", url: `${SITE_URL}/` },
+    { name: "Tienda", url: `${SITE_URL}/productos` },
+  ];
+  if (product.categories[0]) {
+    breadcrumbs.push({
+      name: product.categories[0].name,
+      url: `${SITE_URL}/productos?categoria=${product.categories[0].slug}`,
+    });
+  }
+  breadcrumbs.push({ name: product.name, url: productUrl });
 
   return (
     <>
+      <JsonLd data={[productSchema(product, productUrl), breadcrumbSchema(breadcrumbs)]} />
       <div className="container-x pt-8">
         <nav className="flex items-center gap-2 text-[11px] uppercase tracking-extra-wide text-ink/50">
           <Link href="/" className="hover:text-ink">Inicio</Link>

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { InstagramIcon, WhatsappIcon, MapPinIcon } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Escribinos para consultas, pedidos mayoristas o eventos privados.",
+  title: "Contacto · WhatsApp, email y sucursales",
+  description:
+    "Contactá a Italmarket por WhatsApp (+54 9 11 5136-4554 Barrio Norte · +54 9 11 6783-6252 San Telmo), email info@italmarket.com.ar o visitá nuestras sucursales. Consultas, pedidos mayoristas y eventos privados.",
+  alternates: { canonical: "/contacto" },
 };
 
 export default function ContactoPage() {
@@ -21,14 +23,30 @@ export default function ContactoPage() {
           <div className="mt-10 space-y-6 border-t border-ink/10 pt-10">
             <div>
               <h3 className="eyebrow">Email</h3>
-              <a href="mailto:hola@italmarket.com.ar" className="mt-1 block font-serif text-2xl text-ink hover:underline">
-                hola@italmarket.com.ar
+              <a href="mailto:info@italmarket.com.ar" className="mt-1 block font-serif text-2xl text-ink hover:underline">
+                info@italmarket.com.ar
               </a>
             </div>
             <div>
-              <h3 className="eyebrow">Teléfono</h3>
-              <a href="tel:+541100000000" className="mt-1 block font-serif text-2xl text-ink hover:underline">
-                +54 11 0000 0000
+              <h3 className="eyebrow">WhatsApp Barrio Norte</h3>
+              <a
+                href="https://wa.me/5491151364554"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block font-serif text-2xl text-ink hover:underline"
+              >
+                +54 9 11 5136-4554
+              </a>
+            </div>
+            <div>
+              <h3 className="eyebrow">WhatsApp San Telmo</h3>
+              <a
+                href="https://wa.me/5491167836252"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block font-serif text-2xl text-ink hover:underline"
+              >
+                +54 9 11 6783-6252
               </a>
             </div>
             <div>
@@ -41,10 +59,10 @@ export default function ContactoPage() {
               </p>
             </div>
             <div className="flex items-center gap-4 pt-2">
-              <a href="https://instagram.com/italmarket" aria-label="Instagram" className="text-ink/70 hover:text-ink">
+              <a href="https://instagram.com/italmarket.ar" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink/70 hover:text-ink">
                 <InstagramIcon />
               </a>
-              <a href="https://wa.me/5491100000000" aria-label="WhatsApp" className="text-ink/70 hover:text-ink">
+              <a href="https://wa.me/5491167836252" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp San Telmo" className="text-ink/70 hover:text-ink">
                 <WhatsappIcon />
               </a>
             </div>

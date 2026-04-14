@@ -3,9 +3,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
+  title: "Sobre Italmarket · Tienda italiana premium en Buenos Aires",
   description:
-    "Italmarket es una tienda italiana en Buenos Aires. Conocé nuestra historia, nuestro método de selección y la pasión detrás de cada producto.",
+    "Conocé Italmarket: una tienda italiana en Buenos Aires que selecciona productores artesanales en Italia y trae productos con certificación DOP, IGP y DOCG. Nuestra historia, método de curaduría y valores.",
+  alternates: { canonical: "/nosotros" },
 };
 
 export default function NosotrosPage() {

@@ -1,0 +1,107 @@
+import type { Recipe } from "@/lib/recipes/types";
+
+export const linguineAlLimone: Recipe = {
+  slug: "linguine-al-limone",
+  title: "Linguine al limone con ricotta",
+  italianTitle: "Linguine al limone",
+  summary:
+    "Pasta veraniega de la Costa Amalfitana: linguine, ricotta, limón y pimienta. Quince minutos, cinco ingredientes.",
+  description:
+    "Receta italiana de linguine al limone con ricotta: pasta cítrica de Sorrento con linguine al limone, ricotta fresca, ralladura de limón amarillo, pimienta y pecorino. Veraniega, ligera, lista en 15 minutos.",
+  image: "/images/recipes/linguine-al-limone.jpg",
+  imageAlt: "Linguine al limone con ricotta y ralladura de limón amalfitano",
+  region: "Campania",
+  prepTimeMin: 5,
+  cookTimeMin: 10,
+  servings: 2,
+  difficulty: "fácil",
+  category: "pasta",
+  keywords: [
+    "linguine al limone",
+    "pasta al limon",
+    "pasta al limone",
+    "receta pasta italiana",
+    "linguine limone ricotta",
+    "pasta amalfitana",
+  ],
+  intro: [
+    "La pasta al limone nace en la Costa Amalfitana, donde los limones de Sorrento crecen gigantes y dulces todo el año. Es un plato veraniego, cítrico y ligero — perfecto para un almuerzo rápido.",
+    "La versión con ricotta agrega cremosidad sin saturar. La ralladura se suma al final para que el aroma del aceite esencial del limón no se pierda con el calor.",
+  ],
+  ingredients: [
+    {
+      label: "Linguine al limone",
+      quantity: 250,
+      unit: "g",
+      keywords: ["linguine al limone", "linguine", "spaghetti"],
+      negativeKeywords: ["sin gluten", "gluten free", "al tartufo"],
+      hero: true,
+    },
+    {
+      label: "Ricotta fresca",
+      quantity: 200,
+      unit: "g",
+      keywords: ["ricotta"],
+      negativeKeywords: ["girasoli", "tortellini", "ravioli", "cappelleti"],
+    },
+    {
+      label: "Limón amarillo",
+      quantity: 2,
+      unit: "unidades",
+      note: "Preferentemente ecológicos, de cáscara gruesa. Usamos ralladura y jugo.",
+    },
+    {
+      label: "Aceite de oliva extra virgen",
+      quantity: 3,
+      unit: "cdas",
+      keywords: ["olio extra virgen", "olio extravergine", "olio evo", "aceite de oliva", "dante"],
+      negativeKeywords: ["tarallini", "tartufo", "al limone"],
+    },
+    {
+      label: "Pecorino o Parmigiano rallado",
+      quantity: 40,
+      unit: "g",
+      keywords: ["pecorino", "parmigiano", "parmesano", "grana padano", "caciocavallo"],
+      negativeKeywords: ["mermelada", "granada"],
+    },
+    {
+      label: "Pimienta negra",
+      quantity: "a gusto",
+      keywords: ["pimienta negra", "pepe nero"],
+      negativeKeywords: ["peperoncino"],
+    },
+    {
+      label: "Sal gruesa",
+      quantity: "a gusto",
+    },
+  ],
+  steps: [
+    "Poné a hervir abundante agua con sal gruesa.",
+    "Rallá la cáscara de los 2 limones con microplane, evitando la parte blanca (amargo). Exprimí el jugo — vas a necesitar 3 cucharadas.",
+    "En un bowl grande, batí la ricotta con el jugo de limón, 2 cucharadas de aceite de oliva, pimienta negra gruesa y sal. La mezcla debe quedar cremosa.",
+    "Cociná las linguine al limone 1 minuto menos que la caja.",
+    "Reservá 1 taza de agua de cocción. Colá la pasta.",
+    "Pasá las linguine al bowl de ricotta. Mezclá vigorosamente sumando agua de cocción de a cucharadas hasta que la salsa envuelva la pasta.",
+    "Agregá la ralladura de limón, mezclá 5 segundos y serví inmediatamente.",
+    "Terminá con más ralladura por encima, queso rallado y un hilo de aceite de oliva crudo.",
+  ],
+  tips: [
+    "Si usás linguine simples (no al limone), sumá el jugo de medio limón extra para reforzar el cítrico.",
+    "La ricotta debe estar fresca y densa — si está aguada, escurrila en un colador 30 minutos antes.",
+    "El limón va al final. Si lo calentás mucho, se vuelve amargo.",
+    "Un chorro de prosecco al bowl de ricotta antes de pasar la pasta le da un aire espumoso — variante de Capri.",
+  ],
+  history:
+    "La pasta al limone es una creación de la cocina campesina de la Costa Amalfitana, donde los limones de Sorrento (IGP desde 2000) son un cultivo identitario. Los limoni Femminello Ovale di Sorrento tienen cáscara perfumada rica en aceite esencial y una pulpa jugosa que define la receta. La versión con ricotta se popularizó en las trattorias de Sorrento y Amalfi como plato rápido para turistas. Hoy es uno de los platos italianos más viralizados en redes sociales — y por buena razón: es imposible arruinarlo y queda perfecto cada vez.",
+  pairingKeywords: [
+    "prosecco",
+    "vermentino",
+    "olio extra virgen",
+    "burrata",
+    "mascarpone",
+    "taggiasca",
+    "tarallini",
+    "aceto balsamico",
+  ],
+  publishedAt: "2026-04-13",
+};

@@ -20,10 +20,10 @@ export async function Footer() {
               aceites de primera presión, salumi, formaggi, vinos y dolci seleccionados con criterio.
             </p>
             <div className="mt-6 flex items-center gap-4">
-              <a href="https://instagram.com/italmarket" aria-label="Instagram" className="text-ink/70 hover:text-ink">
+              <a href="https://instagram.com/italmarket.ar" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink/70 hover:text-ink">
                 <InstagramIcon />
               </a>
-              <a href="https://wa.me/5491100000000" aria-label="WhatsApp" className="text-ink/70 hover:text-ink">
+              <a href="https://wa.me/5491167836252" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp San Telmo" className="text-ink/70 hover:text-ink">
                 <WhatsappIcon />
               </a>
             </div>
@@ -46,10 +46,11 @@ export async function Footer() {
           <div>
             <h4 className="eyebrow mb-5">Casa</h4>
             <ul className="space-y-3 text-sm text-ink/75">
+              <li><Link href="/recetas" className="link-underline">Recetas</Link></li>
+              <li><Link href="/guias" className="link-underline">Guías</Link></li>
               <li><Link href="/nosotros" className="link-underline">Nosotros</Link></li>
               <li><Link href="/sucursales" className="link-underline">Sucursales</Link></li>
               <li><Link href="/contacto" className="link-underline">Contacto</Link></li>
-              <li><Link href="/productos" className="link-underline">Envíos</Link></li>
             </ul>
           </div>
 
@@ -59,10 +60,26 @@ export async function Footer() {
               <div>
                 <div className="font-serif text-lg text-ink">Barrio Norte</div>
                 <p className="mt-1 leading-relaxed">Av. Santa Fe 2727<br />CABA, Buenos Aires</p>
+                <a
+                  href="https://wa.me/5491151364554"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block link-underline"
+                >
+                  +54 9 11 5136-4554
+                </a>
               </div>
               <div>
                 <div className="font-serif text-lg text-ink">San Telmo</div>
                 <p className="mt-1 leading-relaxed">Defensa 863<br />CABA, Buenos Aires</p>
+                <a
+                  href="https://wa.me/5491167836252"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block link-underline"
+                >
+                  +54 9 11 6783-6252
+                </a>
               </div>
             </div>
           </div>

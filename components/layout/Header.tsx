@@ -19,6 +19,7 @@ interface HeaderProps {
 
 const staticLinks = [
   { href: "/productos", label: "Productos" },
+  { href: "/recetas", label: "Recetas" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/sucursales", label: "Sucursales" },
 ];

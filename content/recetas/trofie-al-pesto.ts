@@ -1,0 +1,108 @@
+import type { Recipe } from "@/lib/recipes/types";
+
+export const trofieAlPesto: Recipe = {
+  slug: "trofie-al-pesto",
+  title: "Trofie al pesto alla genovese",
+  italianTitle: "Trofie al pesto",
+  summary:
+    "El plato emblema de Liguria: trofie artesanales con pesto genovés, papa y chauchas. En 20 minutos.",
+  description:
+    "Receta tradicional ligure de trofie al pesto: pasta artesanal con pesto alla genovese, papas y chauchas cocidas en el mismo agua de cocción. Un clásico de la cocina italiana lista en veinte minutos.",
+  image: "/images/recipes/trofie-al-pesto.jpg",
+  imageAlt: "Plato de trofie al pesto alla genovese con papa y chauchas",
+  region: "Liguria",
+  prepTimeMin: 5,
+  cookTimeMin: 15,
+  servings: 4,
+  difficulty: "fácil",
+  category: "pasta",
+  keywords: [
+    "trofie al pesto",
+    "pasta al pesto",
+    "pesto genovese pasta",
+    "receta ligure",
+    "trofie alla genovese",
+    "pasta italiana pesto",
+  ],
+  intro: [
+    "Las trofie son la pasta ligure por excelencia: pequeñas espirales hechas a mano con harina y agua, sin huevo. Se sirven casi siempre al pesto, pero con dos detalles que las hacen únicas: la papa y las chauchas cocidas en la misma agua.",
+    "La papa aporta almidón que liga la salsa, y las chauchas dan una textura vegetal. Es un plato completo, humilde y del norte de Italia, pensado originalmente como comida de trabajadores del puerto de Génova.",
+  ],
+  ingredients: [
+    {
+      label: "Trofie",
+      quantity: 400,
+      unit: "g",
+      keywords: ["trofie", "trenette", "linguine"],
+      negativeKeywords: ["sin gluten", "gluten free", "al tartufo", "al limone"],
+      hero: true,
+    },
+    {
+      label: "Pesto alla genovese",
+      quantity: 200,
+      unit: "g",
+      keywords: ["pesto genovese", "pesto alla genovese", "pesto"],
+      negativeKeywords: ["siciliana", "rosso"],
+      note: "Idealmente casero (ver nuestra receta), o un buen pesto italiano embotellado.",
+    },
+    {
+      label: "Papa",
+      quantity: 1,
+      unit: "mediana",
+      note: "Cortada en cubos de 1 cm.",
+    },
+    {
+      label: "Chauchas verdes",
+      quantity: 150,
+      unit: "g",
+      note: "Cortadas en trozos de 3 cm.",
+    },
+    {
+      label: "Aceite de oliva extra virgen",
+      quantity: 2,
+      unit: "cdas",
+      keywords: ["olio extra virgen", "olio extravergine", "olio evo", "aceite de oliva", "dante"],
+      negativeKeywords: ["tarallini", "tartufo", "al limone"],
+    },
+    {
+      label: "Sal gruesa",
+      quantity: "a gusto",
+    },
+    {
+      label: "Parmigiano o pecorino para servir",
+      quantity: 30,
+      unit: "g",
+      keywords: ["parmigiano", "parmesano", "pecorino", "grana padano", "caciocavallo"],
+      negativeKeywords: ["mermelada", "granada"],
+    },
+  ],
+  steps: [
+    "Poné una olla grande de agua a hervir con sal gruesa (10 g por litro).",
+    "Agregá las papas cortadas al agua hirviendo. Cociná 5 minutos.",
+    "Sumá las chauchas. Cociná 3 minutos más.",
+    "Agregá las trofie directamente a la misma olla. Cociná el tiempo que indica la caja, restando 1 minuto.",
+    "Mientras tanto, pasá el pesto a un bowl grande. Si es casero recién hecho no hace falta. Si es de frasco, aflojalo con 2 cucharadas de aceite de oliva.",
+    "Cuando la pasta esté al dente, reservá 1 taza de agua de cocción. Colá trofie, papas y chauchas juntos.",
+    "Pasá todo al bowl del pesto. Mezclá con movimientos suaves, agregando agua de cocción de a cucharadas hasta que el pesto envuelva la pasta como una crema.",
+    "Serví inmediatamente con queso rallado encima. NUNCA calentés la pasta con pesto al fuego — el pesto se oxida y el verde se vuelve marrón.",
+  ],
+  tips: [
+    "El agua de cocción con almidón de la papa es el secreto: liga el pesto mejor que el agua común.",
+    "Si usás pesto de frasco, probá abrirlo y cubrirlo con aceite de oliva antes de revolver — refresca el sabor.",
+    "Las chauchas deben quedar al dente, crujientes; si se pasan, pierden color y textura.",
+    "Este plato NO se recalienta. Siempre recién hecho.",
+  ],
+  history:
+    "Las trofie al pesto son el plato icónico de Liguria, particularmente de la zona de Recco y Camogli. La combinación de pasta, papa y chauchas responde a una lógica de cocina campesina: aprovechar una sola olla y una sola agua de cocción. El pesto, originalmente creado para conservar la albahaca del verano, fue pensado como condimento para esta pasta simple. La receta figura en el recetario oficial del Consorzio del Pesto Genovese como la forma canónica de servir el pesto alla genovese. Génova tiene festivales dedicados exclusivamente a las trofie, y existen más de 20 formatos regionales de pasta fresca ligure — todas sirven al pesto pero las trofie son las reinas.",
+  pairingKeywords: [
+    "vermentino",
+    "prosecco",
+    "olio extra virgen",
+    "taggiasca",
+    "aceto balsamico",
+    "tarallini",
+    "burrata",
+    "parmigiano",
+  ],
+  publishedAt: "2026-04-13",
+};

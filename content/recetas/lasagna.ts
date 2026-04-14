@@ -1,0 +1,118 @@
+import type { Recipe } from "@/lib/recipes/types";
+
+export const lasagna: Recipe = {
+  slug: "lasagna",
+  title: "Lasagna alla bolognese",
+  italianTitle: "Lasagne alla bolognese",
+  summary:
+    "La reina de la pasta al horno: capas de pasta al huevo, ragù bolognese, bechamel y parmigiano. Una hora de horno y tres generaciones de tradición.",
+  description:
+    "Receta tradicional de lasagna alla bolognese: aprendé a armar la lasagna italiana auténtica con láminas de pasta al huevo, ragù bolognese, bechamel casera y parmigiano reggiano. Horneada 40 minutos en horno medio.",
+  image: "/images/recipes/lasagna.jpg",
+  imageAlt: "Porción de lasagna alla bolognese con capas visibles de ragù, bechamel y parmigiano",
+  region: "Emilia-Romagna",
+  prepTimeMin: 30,
+  cookTimeMin: 60,
+  servings: 8,
+  difficulty: "media",
+  category: "pasta",
+  keywords: [
+    "lasagna bolognese",
+    "lasagna italiana",
+    "lasagna al horno",
+    "lasagne alla bolognese",
+    "receta lasagna auténtica",
+    "lasagna casera",
+  ],
+  intro: [
+    "La lasagna alla bolognese es el plato más identitario de Emilia-Romagna: láminas de pasta al huevo verde (con espinaca, tradicionalmente), ragù, bechamel y abundante Parmigiano Reggiano. Cocción al horno hasta que las capas se integren y el queso gratine.",
+    "Es un plato de domingo y de fiesta. Su complejidad no está en los pasos, sino en la suma: hay que tener ragù ya hecho, bechamel fresca y láminas de pasta a punto. Compensación: una lasagna bien armada aguanta 3 días en heladera y mejora con el reposo.",
+  ],
+  ingredients: [
+    {
+      label: "Láminas de lasagna al huevo",
+      quantity: 500,
+      unit: "g",
+      keywords: ["lasagna", "pappardelle", "tagliatelle"],
+      negativeKeywords: ["sin gluten", "gluten free", "al tartufo", "al limone"],
+      note: "Si no hay láminas específicas, pappardelle muy anchas estiradas funcionan. La pasta al huevo no hace falta pre-hervirla si es fresca.",
+      hero: true,
+    },
+    {
+      label: "Ragù alla bolognese",
+      quantity: 1,
+      unit: "kg",
+      note: "Ver nuestra receta de ragù. Ideal usar uno hecho el día anterior.",
+    },
+    {
+      label: "Leche entera para bechamel",
+      quantity: 1,
+      unit: "L",
+    },
+    {
+      label: "Manteca para bechamel",
+      quantity: 80,
+      unit: "g",
+    },
+    {
+      label: "Harina para bechamel",
+      quantity: 80,
+      unit: "g",
+      keywords: ["harina oro", "harina pizza", "farina"],
+      negativeKeywords: ["libre de gluten", "sin gluten"],
+    },
+    {
+      label: "Nuez moscada",
+      quantity: 1,
+      unit: "pizca",
+    },
+    {
+      label: "Parmigiano Reggiano rallado",
+      quantity: 200,
+      unit: "g",
+      keywords: ["parmigiano reggiano", "parmigiano", "parmesano", "grana padano", "caciocavallo"],
+      negativeKeywords: ["mermelada", "granada"],
+    },
+    {
+      label: "Manteca extra para la fuente",
+      quantity: 20,
+      unit: "g",
+    },
+    {
+      label: "Sal y pimienta negra",
+      quantity: "a gusto",
+      keywords: ["pimienta negra", "pepe nero"],
+      negativeKeywords: ["peperoncino"],
+    },
+  ],
+  steps: [
+    "Preparar la bechamel: derretí la manteca en una cacerola a fuego medio. Sumá la harina de golpe y cociná 2 minutos revolviendo hasta que burbujee sin dorar (roux rubio).",
+    "Calentá la leche aparte hasta casi hervir. Agregala al roux de a chorros, revolviendo con batidor. Incorporá todo de a poco para que no se formen grumos.",
+    "Cociná la bechamel 8–10 minutos a fuego bajo, revolviendo. Debe napar la cuchara. Salá, pimienta y nuez moscada. Reservá tapada con film en contacto.",
+    "Precalentá el horno a 180 °C.",
+    "Enmantecá una fuente rectangular de unos 25×35 cm.",
+    "Armado por capas: 1) cucharada de ragù en el fondo para que no se pegue. 2) capa de láminas de pasta. 3) ragù (150 g). 4) bechamel (80 g distribuidos). 5) parmigiano (30 g rallado). Repetir 5 veces hasta terminar con bechamel y parmigiano por encima.",
+    "Si la pasta es seca, sumá un chorrito de leche entre capas — absorbe durante la cocción.",
+    "Horneá 40 minutos cubierto con papel aluminio. Destapá los últimos 10 minutos para que gratine.",
+    "Sacá del horno y dejá reposar 15 minutos antes de cortar. El reposo es clave: si la cortás al momento, se desarma.",
+  ],
+  tips: [
+    "La mejor lasagna se come al día siguiente recalentada. Los sabores se asientan y las capas se definen.",
+    "Si usás láminas secas sin hervir, agregá más bechamel y leche — la pasta absorbe líquido al cocinarse.",
+    "El ragù ya debe estar sazonado — la lasagna no se sazona entre capas.",
+    "Congela perfecto en porciones: 3 meses en freezer, descongela 24 h en heladera.",
+  ],
+  history:
+    "La lasagna tiene raíces en la Antigua Roma — Cicerón hablaba de laganum, finas láminas de masa de harina cocidas. Pero la versión alla bolognese tal como la conocemos se consolidó en el siglo XIX en Emilia-Romagna, con la difusión de la pasta al huevo verde (con espinaca) y la codificación del ragù. En 2003, la receta oficial de las lasagne verdi alla bolognese fue registrada por la Accademia Italiana della Cucina ante la Cámara de Comercio de Bolonia. Hay variantes regionales: lasagna napoletana (con mozzarella, salame y huevo duro), lasagna ligure (con pesto), lasagna alla ferrarese (con calabaza). La bolognese sigue siendo la matriz.",
+  pairingKeywords: [
+    "sangiovese",
+    "chianti",
+    "barolo",
+    "parmigiano",
+    "aceto balsamico",
+    "olio extra virgen",
+    "tarallini",
+    "prosecco",
+  ],
+  publishedAt: "2026-04-13",
+};

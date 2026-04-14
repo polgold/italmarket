@@ -1,0 +1,101 @@
+import type { Recipe } from "@/lib/recipes/types";
+
+export const caprese: Recipe = {
+  slug: "caprese",
+  title: "Insalata caprese con burrata",
+  italianTitle: "Insalata caprese",
+  summary:
+    "Los tres colores de Italia en un plato: burrata fresca, tomate perita y albahaca. Con aceite de oliva y aceto balsámico.",
+  description:
+    "Receta auténtica de insalata caprese: ensalada italiana de burrata o mozzarella di bufala, tomates perita maduros, albahaca fresca, aceite de oliva extra virgen y aceto balsámico. Plato emblema de Capri, en 5 minutos.",
+  image: "/images/recipes/caprese.jpg",
+  imageAlt: "Insalata caprese con burrata, tomate perita y albahaca fresca",
+  region: "Campania",
+  prepTimeMin: 5,
+  cookTimeMin: 0,
+  servings: 2,
+  difficulty: "fácil",
+  category: "entrada",
+  keywords: [
+    "insalata caprese",
+    "ensalada caprese",
+    "caprese con burrata",
+    "receta caprese",
+    "entrada italiana",
+    "caprese original",
+  ],
+  intro: [
+    "La caprese es la entrada italiana más simple que existe, y por eso la más difícil: tres ingredientes, todo depende de su calidad. Nació en la isla de Capri en los años 20, inspirada en la bandera italiana — rojo del tomate, blanco de la mozzarella, verde de la albahaca.",
+    "Con burrata en lugar de mozzarella queda más cremosa y moderna. Es una ensalada de verano, tibia, que pide buenos tomates y un aceite de oliva de primera.",
+  ],
+  ingredients: [
+    {
+      label: "Burrata o mozzarella di bufala",
+      quantity: 250,
+      unit: "g",
+      keywords: ["burrata", "bocconcino", "mozzarella", "fior di latte"],
+      negativeKeywords: ["pizza", "daleo", "congelada"],
+      hero: true,
+    },
+    {
+      label: "Tomates perita o cherry maduros",
+      quantity: 3,
+      unit: "unidades",
+      note: "Idealmente bien rojos, a temperatura ambiente. El tomate frío no sabe a nada.",
+    },
+    {
+      label: "Hojas de albahaca fresca",
+      quantity: 10,
+      unit: "hojas",
+    },
+    {
+      label: "Aceite de oliva extra virgen",
+      quantity: 3,
+      unit: "cdas",
+      keywords: ["olio extra virgen", "olio extravergine", "olio evo", "aceite de oliva", "dante"],
+      negativeKeywords: ["tarallini", "tartufo", "al limone"],
+    },
+    {
+      label: "Aceto balsámico",
+      quantity: 1,
+      unit: "cda",
+      keywords: ["aceto balsamico", "aceto balsamico divella"],
+      negativeKeywords: ["tartufo"],
+      note: "Opcional para puristas napolitanos. Pero mejora mucho el contraste.",
+    },
+    {
+      label: "Sal gruesa y pimienta negra",
+      quantity: "a gusto",
+      keywords: ["pimienta negra", "pepe nero"],
+      negativeKeywords: ["peperoncino"],
+    },
+  ],
+  steps: [
+    "Sacá la burrata de la heladera 20 minutos antes. A temperatura ambiente la crema interior fluye mejor.",
+    "Cortá los tomates en rodajas gruesas (1 cm). Acomodalos en un plato plano, salá ligero.",
+    "Abrí la burrata con un cuchillo en el centro del plato, dejando que la crema se derrame sobre los tomates.",
+    "Distribuí las hojas de albahaca enteras (no cortadas).",
+    "Regá con el aceite de oliva extra virgen en hilo generoso. Si usás aceto balsámico, agregá unas gotas.",
+    "Terminá con sal gruesa y pimienta negra recién molida.",
+    "Serví inmediatamente, acompañado de pan tostado o tarallini.",
+  ],
+  tips: [
+    "El tomate NUNCA en heladera. Pierde el azúcar y la textura. Sacalo 4 horas antes.",
+    "La burrata abierta dura horas, pero la crema se oxida rápido: abrila al momento de servir.",
+    "El aceite es protagonista: uno sin sabor no alcanza. Un Olio Extra Virgen 100% italiano (Dante o similar) es ideal.",
+    "Variante veraniega: agregar tomate cherry amarillo y rojo para un juego de color.",
+  ],
+  history:
+    "La insalata caprese fue creada en Capri en los años 1920, según la leyenda, por un patriota futurista que quería un plato con los tres colores de la bandera italiana — una declaración de nacionalismo gastronómico. El origen exacto se disputa entre varias trattorias, pero la versión más difundida sitúa su nacimiento en el Hotel Quisisana, frecuentado por intelectuales italianos de entreguerras. La receta figura registrada como PAT (Prodotto Agroalimentare Tradizionale) de Campania. En 2019, la UNESCO consideró incluir la caprese en su lista de patrimonio inmaterial — junto con otros platos de la dieta mediterránea.",
+  pairingKeywords: [
+    "prosecco",
+    "vermentino",
+    "olio extra virgen",
+    "aceto balsamico",
+    "tarallini",
+    "taggiasca",
+    "olive",
+    "grissini",
+  ],
+  publishedAt: "2026-04-13",
+};

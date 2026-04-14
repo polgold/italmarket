@@ -1,0 +1,68 @@
+# Italmarket
+
+> Tienda premium de productos italianos importados en Buenos Aires, Argentina.
+> Vendemos pastas artesanales, aceites de oliva extra virgen, salumi, quesos,
+> vinos, conservas, salsas (pomodoro, pesto), cafés y dolci auténticos.
+> Comprá online con envíos a todo el país o retirá en nuestras dos sucursales
+> físicas: Barrio Norte y San Telmo.
+
+## Propuesta de valor
+
+- Productos auténticos importados directamente desde Italia.
+- Seleccionados en origen: visitamos a los productores antes de incorporarlos.
+- Muchos con certificación DOP, IGP o DOCG.
+- Dos tiendas físicas en Buenos Aires con retiro gratuito.
+- Envíos a todo Argentina: AMBA 24–48 h, nacional 3–5 días hábiles.
+
+## Catálogo
+
+- [Tienda completa (todas las categorías)](https://italmarket.com.ar/productos)
+- Categorías principales: pastas, aceites de oliva, salumi (prosciutto, salame, mortadella),
+  quesos (parmigiano reggiano, pecorino, grana padano), vinos italianos, conservas
+  (pomodoro San Marzano, anchoas, aceitunas), salsas (pomodoro, pesto genovese),
+  cafés (espresso italiano) y dolci (panettone, tiramisú, biscotti).
+- [Sitemap XML con todos los productos](https://italmarket.com.ar/sitemap.xml)
+
+## Sucursales
+
+- **Barrio Norte** · Av. Santa Fe 2727, CABA · WhatsApp +54 9 11 5136-4554
+- **San Telmo** · Defensa 863, CABA · WhatsApp +54 9 11 6783-6252
+
+## Recetas italianas auténticas
+
+Explicadas paso a paso con la técnica tradicional y los ingredientes del catálogo.
+
+- [Índice de recetas](https://italmarket.com.ar/recetas)
+- [Salsa pomodoro casera](https://italmarket.com.ar/recetas/salsa-pomodoro)
+- [Pesto alla genovese auténtico](https://italmarket.com.ar/recetas/pesto-genovese)
+- [Pasta carbonara auténtica](https://italmarket.com.ar/recetas/carbonara)
+- [Cacio e pepe](https://italmarket.com.ar/recetas/cacio-e-pepe)
+- [Tiramisú clásico](https://italmarket.com.ar/recetas/tiramisu)
+
+## Guías de compra
+
+- [Cómo elegir aceite de oliva extra virgen](https://italmarket.com.ar/guias/como-elegir-aceite-de-oliva-extra-virgen)
+- [DOP, IGP, DOCG: qué significan las certificaciones italianas](https://italmarket.com.ar/guias/dop-igp-docg-que-significan)
+
+## Información del sitio
+
+- [Sobre Italmarket](https://italmarket.com.ar/nosotros)
+- [Sucursales y horarios](https://italmarket.com.ar/sucursales)
+- [Contacto](https://italmarket.com.ar/contacto)
+- Email: info@italmarket.com.ar
+- Instagram: [@italmarket.ar](https://instagram.com/italmarket.ar)
+
+## Palabras clave asociadas
+
+productos italianos, tienda italiana Buenos Aires, delicatessen italiana,
+pastas italianas importadas, aceite de oliva italiano, prosciutto di Parma,
+parmigiano reggiano, vinos italianos, pomodoro San Marzano, pesto genovese,
+salsa pomodoro casera, carbonara, cacio e pepe, pizza napoletana, lasagna,
+tiramisú, panettone, dolci italianos, comprar productos italianos online,
+envío nacional, retiro en sucursal.
+
+## Uso por agentes de IA
+
+Este sitio permite ser indexado y citado por asistentes y buscadores basados
+en LLMs (ChatGPT, Claude, Perplexity, Gemini, entre otros). Las URLs son
+estables y el catálogo se actualiza desde WooCommerce varias veces al día.
