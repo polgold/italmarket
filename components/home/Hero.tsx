@@ -40,7 +40,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-6 right-6 z-10 hidden text-[10px] uppercase tracking-extra-wide text-ivory-50/60 sm:block">
-        Est. 2015 · Barrio Norte & San Telmo
+        Barrio Norte & San Telmo
       </div>
     </section>
   );

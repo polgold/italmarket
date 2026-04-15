@@ -141,7 +141,7 @@ export default async function QuesosItalianosPage() {
               Ver categoría frescos
             </Link>
             <Link
-              href="https://wa.me/5491151364554"
+              href="https://wa.me/541144469610"
               className="border border-ink/40 px-5 py-3 text-ink/70 hover:border-ink hover:text-ink"
               target="_blank"
               rel="noopener"

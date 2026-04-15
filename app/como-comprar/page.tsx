@@ -67,7 +67,7 @@ const FAQS = [
   },
   {
     q: "Si pago por transferencia, ¿cuándo se despacha mi pedido?",
-    a: "Cuando pagás por transferencia, tu pedido queda en estado 'pendiente de pago'. Enviános el comprobante por WhatsApp al +54 9 11 6783-6252. Una vez verificado el pago (dentro de las 24 hs hábiles) liberamos el pedido y lo preparamos para despachar o retirar.",
+    a: "Cuando pagás por transferencia, tu pedido queda en estado 'pendiente de pago'. Enviános el comprobante por WhatsApp al +54 11 4446-9610. Una vez verificado el pago (dentro de las 24 hs hábiles) liberamos el pedido y lo preparamos para despachar o retirar.",
   },
   {
     q: "¿Cuánto tarda el envío por Andreani?",
@@ -172,20 +172,12 @@ export default function ComoComprarPage() {
               </p>
               <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-6">
                 <a
-                  href={ORG_CONTACT.whatsappSanTelmo}
+                  href={ORG_CONTACT.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-underline text-sm uppercase tracking-extra-wide text-ink"
                 >
-                  WhatsApp San Telmo →
-                </a>
-                <a
-                  href={ORG_CONTACT.whatsappBarrioNorte}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline text-sm uppercase tracking-extra-wide text-ink"
-                >
-                  WhatsApp Barrio Norte →
+                  WhatsApp →
                 </a>
               </div>
             </div>
@@ -292,20 +284,12 @@ export default function ComoComprarPage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
-              href={ORG_CONTACT.whatsappSanTelmo}
+              href={ORG_CONTACT.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary bg-ivory-50 text-ink hover:bg-ivory-100"
             >
-              WhatsApp San Telmo
-            </a>
-            <a
-              href={ORG_CONTACT.whatsappBarrioNorte}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary bg-ivory-50 text-ink hover:bg-ivory-100"
-            >
-              WhatsApp Barrio Norte
+              WhatsApp
             </a>
           </div>
         </div>

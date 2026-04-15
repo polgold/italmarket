@@ -4,7 +4,7 @@ import { InstagramIcon, WhatsappIcon, MapPinIcon } from "@/components/ui/Icons";
 export const metadata: Metadata = {
   title: "Contacto · WhatsApp, email y sucursales",
   description:
-    "Contactá a Italmarket por WhatsApp (+54 9 11 5136-4554 Barrio Norte · +54 9 11 6783-6252 San Telmo), email info@italmarket.com.ar o visitá nuestras sucursales. Consultas, pedidos mayoristas y eventos privados.",
+    "Contactá a Italmarket por WhatsApp (+54 11 4446-9610), email info@italmarket.com.ar o visitá nuestras sucursales en Barrio Norte y San Telmo. Consultas, pedidos mayoristas y eventos privados.",
   alternates: { canonical: "/contacto" },
 };
 
@@ -28,25 +28,14 @@ export default function ContactoPage() {
               </a>
             </div>
             <div>
-              <h3 className="eyebrow">WhatsApp Barrio Norte</h3>
+              <h3 className="eyebrow">WhatsApp</h3>
               <a
-                href="https://wa.me/5491151364554"
+                href="https://wa.me/541144469610"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-1 block font-serif text-2xl text-ink hover:underline"
               >
-                +54 9 11 5136-4554
-              </a>
-            </div>
-            <div>
-              <h3 className="eyebrow">WhatsApp San Telmo</h3>
-              <a
-                href="https://wa.me/5491167836252"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 block font-serif text-2xl text-ink hover:underline"
-              >
-                +54 9 11 6783-6252
+                +54 11 4446-9610
               </a>
             </div>
             <div>
@@ -62,7 +51,7 @@ export default function ContactoPage() {
               <a href="https://instagram.com/italmarket.ar" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink/70 hover:text-ink">
                 <InstagramIcon />
               </a>
-              <a href="https://wa.me/5491167836252" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp San Telmo" className="text-ink/70 hover:text-ink">
+              <a href="https://wa.me/541144469610" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-ink/70 hover:text-ink">
                 <WhatsappIcon />
               </a>
             </div>

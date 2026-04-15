@@ -23,7 +23,7 @@ export async function Footer() {
               <a href="https://instagram.com/italmarket.ar" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink/70 hover:text-ink">
                 <InstagramIcon />
               </a>
-              <a href="https://wa.me/5491167836252" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp San Telmo" className="text-ink/70 hover:text-ink">
+              <a href="https://wa.me/541144469610" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-ink/70 hover:text-ink">
                 <WhatsappIcon />
               </a>
             </div>
@@ -62,25 +62,19 @@ export async function Footer() {
               <div>
                 <div className="font-serif text-lg text-ink">Barrio Norte</div>
                 <p className="mt-1 leading-relaxed">Av. Santa Fe 2727<br />CABA, Buenos Aires</p>
-                <a
-                  href="https://wa.me/5491151364554"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block link-underline"
-                >
-                  +54 9 11 5136-4554
-                </a>
               </div>
               <div>
                 <div className="font-serif text-lg text-ink">San Telmo</div>
                 <p className="mt-1 leading-relaxed">Defensa 863<br />CABA, Buenos Aires</p>
+              </div>
+              <div>
                 <a
-                  href="https://wa.me/5491167836252"
+                  href="https://wa.me/541144469610"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-1 inline-block link-underline"
                 >
-                  +54 9 11 6783-6252
+                  +54 11 4446-9610
                 </a>
               </div>
             </div>

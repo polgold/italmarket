@@ -42,10 +42,8 @@ export const SITE_KEYWORDS = [
 
 export const ORG_CONTACT = {
   email: "info@italmarket.com.ar",
-  phoneBarrioNorte: "+54 9 11 5136-4554",
-  phoneSanTelmo: "+54 9 11 6783-6252",
-  whatsappBarrioNorte: "https://wa.me/5491151364554",
-  whatsappSanTelmo: "https://wa.me/5491167836252",
+  phone: "+54 11 4446-9610",
+  whatsapp: "https://wa.me/541144469610",
   instagram: "https://instagram.com/italmarket.ar",
 };
 
@@ -72,13 +70,12 @@ export const STORES: StoreLocation[] = [
     addressLocality: "Buenos Aires",
     addressRegion: "CABA",
     postalCode: "C1425",
-    telephone: "+54 9 11 5136-4554",
+    telephone: "+54 11 4446-9610",
     image: `${SITE_URL}/images/storefront.jpg`,
     url: `${SITE_URL}/sucursales#barrio-norte`,
     mapUrl: "https://maps.google.com/?q=Av.+Santa+Fe+2727+CABA",
     hours: [
-      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "10:00", closes: "21:00" },
-      { days: ["Saturday"], opens: "10:00", closes: "20:00" },
+      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "20:00" },
     ],
   },
   {
@@ -88,13 +85,13 @@ export const STORES: StoreLocation[] = [
     addressLocality: "Buenos Aires",
     addressRegion: "CABA",
     postalCode: "C1065",
-    telephone: "+54 9 11 6783-6252",
+    telephone: "+54 11 4446-9610",
     image: `${SITE_URL}/images/san-telmo.jpg`,
     url: `${SITE_URL}/sucursales#san-telmo`,
     mapUrl: "https://maps.google.com/?q=Defensa+863+CABA",
     hours: [
-      { days: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "11:00", closes: "20:00" },
-      { days: ["Sunday"], opens: "11:00", closes: "18:00" },
+      { days: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:00", closes: "20:00" },
+      { days: ["Monday"], opens: "11:00", closes: "19:00" },
     ],
   },
 ];

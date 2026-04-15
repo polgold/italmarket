@@ -119,7 +119,7 @@ export const BRANDS: BrandSEO[] = [
     metaTitle: "Perugina · Chocolates Baci y Grifo desde Italia",
     metaDescription:
       "Perugina desde 1907 en Perugia: Baci Perugina originales, tabletas Grifo (fondente, assortiti, cioccomania) y cajas para gifting. Chocolate italiano importado por Italmarket.",
-    matcher: /\bperugina\b/i,
+    matcher: /\b(perugina|bijuo)\b/i,
   },
 
   {
@@ -146,27 +146,6 @@ export const BRANDS: BrandSEO[] = [
     matcher: /\bmenabrea\b/i,
   },
 
-  {
-    slug: "bijuo",
-    name: "Bijuo",
-    eyebrow: "Chocolate italiano contemporáneo",
-    region: "Italia",
-    country: "Italia",
-    intro:
-      "Bijuo es una casa de chocolate italiana contemporánea que trabaja fórmulas limpias (sin lecitina de soja, sin emulsionantes innecesarios) y presentaciones de regalo. Su línea de estuches es de las más elegidas para gifting en Italmarket.",
-    history:
-      "Bijuo se enfoca en formatos pensados para regalo y pequeños placeres cotidianos: estuches de 175 g que combinan tabletas finas en variedades Original Dark, Milk, Caffè, Assorted y Extra Dark. La formulación privilegia el cacao (mínimo 51% en las versiones milk, 70% en las dark) y evita grasas vegetales alternativas al manteca de cacao. Es chocolate italiano moderno en presentación gift-ready: el estuche se regala tal cual viene, sin packaging adicional.",
-    highlights: [
-      "Estuches 175g listos para regalo",
-      "Variedades: Original Dark, Milk, Caffè, Extra Dark, Assorted",
-      "Sin grasas vegetales alternativas",
-      "Formato gifting todo el año",
-    ],
-    metaTitle: "Bijuo · Chocolate italiano premium en estuches gift",
-    metaDescription:
-      "Bijuo: chocolate italiano en estuches de 175g. Original Dark, Milk, Caffè y Extra Dark. Formato listo para regalo. Importado por Italmarket.",
-    matcher: /\bbijuo\b/i,
-  },
 ];
 
 /**

@@ -11,12 +11,12 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Marcas italianas que trabajamos",
   description:
-    "Productores italianos que importamos directo a Buenos Aires: Divella, Perugina, Menabrea, Giuliano Tartufi, Bijuo y más. Historia, región y productos disponibles de cada casa.",
+    "Productores italianos que importamos directo a Buenos Aires: Divella, Perugina, Menabrea, Giuliano Tartufi y más. Historia, región y productos disponibles de cada casa.",
   alternates: { canonical: "/marca" },
   openGraph: {
     title: "Marcas italianas · Italmarket",
     description:
-      "Productores italianos que importamos directo: Divella, Perugina, Menabrea, Giuliano Tartufi, Bijuo y más.",
+      "Productores italianos que importamos directo: Divella, Perugina, Menabrea, Giuliano Tartufi y más.",
     url: `${SITE_URL}/marca`,
     type: "website",
   },
